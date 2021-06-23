@@ -1,0 +1,34 @@
+components:
+  parameters:
+    StartDate:
+      in: path
+      name: StartDate
+      required: true
+      description: Fecha donde se debe iniciar la consulta.
+      schema:
+        type: string
+        example: 05-2021
+    EndDate:
+      in: path
+      name: EndDate
+      required: true
+      description: Fecha hasta donde llegara la consulta.
+      schema:
+        type: string
+        example: 05-2021
+    Query:
+      in: path
+      name: Query
+      required: true
+      description: Filtro.
+      schema:
+        type: string
+        example: "null"
+    PageSize:
+      in: path
+      name: PageSize
+      required: true
+      description: Tamaño de la pagina.
+      schema:
+        type: string
+        example: 10

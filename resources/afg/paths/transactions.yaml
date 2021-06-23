@@ -1,0 +1,18 @@
+get:
+  tags:
+    - Grupo Americano Fidelium (AFG)
+  summary: Permite obtener las transacciones de los comercios que participan en el servicio de Fidelium
+  parameters: 
+    - $ref: '../parameters.yaml#/components/parameters/StartDate'
+    - $ref: '../parameters.yaml#/components/parameters/EndDate'
+    - $ref: '../parameters.yaml#/components/parameters/Query'
+    - $ref: '../parameters.yaml#/components/parameters/PageSize'
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas.yaml#/components/schemas/Transations'
+    404:
+      $ref: '../responses.yaml#/components/responses/RequestNotFound'

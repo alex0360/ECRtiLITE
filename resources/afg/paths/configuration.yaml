@@ -1,0 +1,29 @@
+get:
+  tags:
+    - Grupo Americano Fidelium (AFG)
+  summary: Permite obtener la configuración actual del tarifario de Fidelium
+  responses:
+    200:
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas.yaml#/components/schemas/Tariff'
+    401:
+      $ref: '../responses.yaml#/components/responses/DefaultError'
+put:
+  tags:
+    - Grupo Americano Fidelium (AFG)
+  summary: Permite actualizar la configuración actual del tarifario de Fidelium
+  requestBody:
+    description: The account role data to be updated.
+    required: true
+    content:
+      application/json:
+        schema:
+          $ref: '../schemas.yaml#/components/schemas/Tariff'
+  responses:
+    200:
+      description: OK
+    401:
+      $ref: '../responses.yaml#/components/responses/DefaultError'

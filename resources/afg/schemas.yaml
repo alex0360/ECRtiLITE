@@ -1,0 +1,89 @@
+components:
+  schemas:
+    Transations:
+      type: object
+      properties:
+        Count:
+          type: integer
+          example: 1
+        TotalAmount:
+          type: number
+          format: float
+          example: 12540.00
+        TotalFixedLoad:
+          type: number
+          format: float
+          example: 0.50
+        TotalVolume:
+          type: number
+          format: float
+          example: 15.675
+        Transations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Transation'
+    Transation:
+      type: object
+      properties:
+        RNC:
+          type: string
+          example: 124320911
+        MerchantId:
+          type: string
+          example: 349093324
+        Merchant:
+          type: string
+          example: El Nazareno
+        Zone:
+          type: string
+          example: Santo Domingo Oeste
+        Executive:
+          type: string
+          example: Oficina Comercial
+        Date:
+          type: string
+          format: date-time
+          example: 2021-05-31 17:35:00:0000
+        Card:
+          type: string
+          example: 472307_3066
+        type:
+          type: string
+          example: Crédito
+        Amount:
+          type: number
+          format: float
+          example: 12540.00
+        Source:
+          type: string
+          example: Acumulación
+        Status:
+          type: string
+          example: Aprobada
+        Charge:
+          type: number
+          format: float
+          example: 0.50
+        Volume:
+          type: number
+          format: float
+          example: 15.675
+    Tariff:
+      properties:
+        FixedCharge:
+          type: integer
+          format: float
+          example: 0.50
+        Volume:
+          type: integer
+          format: float
+          example: 15.675
+    RequestNotFound:
+      properties:
+        message:
+          type: string
+          example: "Solicitud no encontrada"
+    DefaultError:
+      properties:
+        message:
+          type: string

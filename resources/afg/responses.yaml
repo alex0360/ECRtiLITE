@@ -1,0 +1,14 @@
+components:
+  responses:
+    RequestNotFound:
+      description: Request not found
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/RequestNotFound'
+    DefaultError:
+      description: Request not found
+      content:
+        application/json:
+          schema:
+            $ref: 'schemas.yaml#/components/schemas/DefaultError'

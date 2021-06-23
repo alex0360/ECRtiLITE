@@ -1,0 +1,31 @@
+openapi: 3.0.0
+info:
+  title: CardNET Web Services (CWS)
+  description: CardNET Web Services (CWS) es una plataforma que aloja todos los servicios web provistos por CardNET tanto para las aplicaciones internas como las externas.
+  contact:
+    name: Cardnet
+    url: 'https://www.cardnet.com.do/'
+    email: CardNET@cardnet.com.do
+  license:
+    name: Apache 2.0
+    url: 'https://www.apache.org/licenses/LICENSE-2.0.html'
+  version: '1.0.0'
+servers:
+    - url: 'http://localhost:80/swagger-ui/'
+      description: Localhost server
+    # Added by API Auto Mocking Plugin
+    - url: https://virtserver.swaggerhub.com/CardNET/AFG/1.0
+      description: SwaggerHub API Auto Mocking
+    - url: 'https://serwebdesa01:7443/cws'
+      description: Development server
+    - url: 'https://serwebqa01:7443/cws'
+      description: QA server
+    - url: 'https://serweb01:7443/cws'
+      description: Production server
+tags:
+ - name: Grupo Americano Fidelium (AFG)
+paths:
+  '/afg/startDate/{StartDate}/endDate/{EndDate}/query/{Query}/pageSize/{PageSize}':
+    $ref: 'resources/afg/paths/transactions.yaml'
+  '/afg/configuration':
+    $ref: 'resources/afg/paths/configuration.yaml'

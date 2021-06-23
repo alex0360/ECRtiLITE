@@ -1,0 +1,184 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "CWS-AFG",
+    "description": "Servicio",
+    "contact": {
+      "name": "Cardnet",
+      "url": "https://www.cardnet.com.do/",
+      "email": "CardNET@cardnet.com.do"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://virtserver.swaggerhub.com/CardNET/AFG/1.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "https://serwebdesa01:7443/cws",
+      "description": "Development server"
+    },
+    {
+      "url": "https://serwebqa01:7443/cws",
+      "description": "QA server"
+    },
+    {
+      "url": "https://serweb01:7443/cws",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/afg/startDate/{StartDate}/endDate/{EndDate}/query/{Query}/pageSize/{PageSize}": {
+      "get": {
+        "tags": [
+          "Transactions"
+        ],
+        "summary": "Permite obtener las transacciones de los comercios que participan en el servicio de Fidelium",
+        "parameters": [
+          {
+            "name": "StartDate",
+            "in": "path",
+            "description": "Fecha donde se debe iniciar la consulta.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "05-21"
+            }
+          },
+          {
+            "name": "EndDate",
+            "in": "path",
+            "description": "Fecha hasta donde llegara la consulta.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "05-21"
+            }
+          },
+          {
+            "name": "Query",
+            "in": "path",
+            "description": "Filtro.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "null"
+            }
+          },
+          {
+            "name": "PageSize",
+            "in": "path",
+            "description": "Tamaño de la pagina.",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "string",
+              "example": "10"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/inline_response_200"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Request not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string",
+                  "example": "{\"message\":\"Rango de fecha no soportado\"}"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "inline_response_200": {
+        "properties": {
+          "RNC": {
+            "type": "string",
+            "example": "124320911"
+          },
+          "MerchantId": {
+            "type": "string",
+            "example": "349093324"
+          },
+          "Merchant": {
+            "type": "string",
+            "example": "El Nazareno"
+          },
+          "Zone": {
+            "type": "string",
+            "example": "Santo Domingo Oeste"
+          },
+          "Executive": {
+            "type": "string",
+            "example": "Oficina Comercial"
+          },
+          "Date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "Card": {
+            "type": "string",
+            "example": "4723073066"
+          },
+          "type": {
+            "type": "string",
+            "example": "Crédito"
+          },
+          "Amount": {
+            "type": "number",
+            "format": "float",
+            "example": 12540.01
+          },
+          "Source": {
+            "type": "string",
+            "example": "Acumulación"
+          },
+          "Statu": {
+            "type": "string",
+            "example": "Aprobada"
+          },
+          "Charge": {
+            "type": "number",
+            "format": "float",
+            "example": 0.5
+          },
+          "Volume": {
+            "type": "number",
+            "format": "float",
+            "example": 15.675
+          }
+        }
+      }
+    }
+  }
+}
