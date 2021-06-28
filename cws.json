@@ -20,7 +20,7 @@
       "description": "SwaggerHub API Auto Mocking"
     },
     {
-      "url": "https",
+      "url": "http://127.0.0.1:4010/",
       "description": "Development server"
     },
     {
