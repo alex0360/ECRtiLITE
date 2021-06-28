@@ -24,7 +24,7 @@
       "description": "Development server"
     },
     {
-      "url": "https://serwebqa01:7443/cws",
+      "url": "https://127.0.0.1:4010/",
       "description": "QA server"
     },
     {
