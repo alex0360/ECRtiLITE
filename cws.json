@@ -20,7 +20,7 @@
       "description": "SwaggerHub API Auto Mocking"
     },
     {
-      "url": "https://serwebdesa01:7443/cws",
+      "url": "https",
       "description": "Development server"
     },
     {
